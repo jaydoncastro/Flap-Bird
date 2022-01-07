@@ -56,7 +56,7 @@ public class Bird implements MouseListener {
 		y+=vy;
 		vy++;
 		
-		if(y >= 800) {
+		if(y >= 700 || y <= -100) {
 			Death = true;
 		}
 		tx.setToTranslation(x, y);

@@ -17,25 +17,56 @@ import javax.swing.Timer;
 
 public class Runner extends JPanel implements KeyListener, ActionListener, MouseListener{
 	
+	int numberOfPipes = 2;
+	public boolean Started;
 	
-	
+	Pipes2[] toppipes = new Pipes2[4];
+	Pipes[] botpipes = new Pipes[4];
 	Bird Bird = new Bird();
 	Ground foreground = new Ground();
 	Gameover deathscreen = new Gameover();
+	StartScreen start = new StartScreen();
+	
+	
 	
 	public void paint(Graphics g) {
 		super.paintComponent(g);
 		
-		if(Bird.isDeath() == false) {
+		if(Started == false) {
+			start.paint(g);
+		}
+		
+		
+		
+		
+		
+		
+		
+		if(Started == true) {
+			if(Bird.isDeath() == false) {
+				
 			foreground.paint(g);
 			Bird.paint(g);
+			
+			for (int i = 0; i < botpipes.length; i++) {
+				botpipes[i].paint(g); 
+				toppipes[i].paint(g);
+		
+			}
+			
+			//if(pipex >= 0) {
+			//	numberOfPipes++;
+			//	System.out.println("pipe gone");
+			//}
 		}
 	
 		if(Bird.isDeath() == true) {
 			deathscreen.paint(g);
+		
 		}
 		
 		
+		}
  }
 	
 	
@@ -52,6 +83,12 @@ public class Runner extends JPanel implements KeyListener, ActionListener, Mouse
 		t = new Timer(16, this);
 		t.start();
 		f.setVisible(true);
+		
+		// generate pipes
+		for (int i = 0; i < botpipes.length; i++) {
+			botpipes[i] = new Pipes();
+			toppipes[i] = new Pipes2();
+		}
 		
 	}
 
@@ -121,8 +158,14 @@ public class Runner extends JPanel implements KeyListener, ActionListener, Mouse
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		Bird.Jump();
 		
+		if(Started == false) {
+			Started = true;
+		}
+		
+		if(Started == true) {
+		Bird.Jump();
+		}
 	}
 
 

@@ -6,18 +6,18 @@ import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.net.URL;
 
-public class Pipes {
+public class Pipes2 {
 	public int pipex = 0,pipey = 0;
-	private int x2 = 0,y2 = 0;
+	
 	private Image img; // image of the frog
 	private AffineTransform tx = AffineTransform.getTranslateInstance(pipex, pipey);
 
-	public Pipes() {
-	img = getImage("/imgs/pipe.png"); //load the image based on the filename "ground.png"
+	public Pipes2() {
+	img = getImage("/imgs/pipe2.png"); //load the image based on the filename "ground.png"
 		init(pipex, pipey);    
 		
 		pipex = 800;
-		pipey = 300;
+		pipey = 100;
 		
 		init(pipex, pipey);
 		
@@ -69,7 +69,7 @@ public class Pipes {
 		tx.scale(0.5, 1);
 	}
 
-	// converts image to make it drawable in paint
+	
 	private Image getImage(String path) {
 		Image tempImage = null;
 		try {
