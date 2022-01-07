@@ -88,9 +88,9 @@ public class Bird implements MouseListener {
 	}
 	
 	
-	private void init(double a, double b) {
-		tx.setToTranslation(a, b);
-		tx.scale(1, 1);
+	private void init(int x, int y) {
+		tx.setToTranslation(x, y);
+		tx.scale(1,1);
 	}
 
 
