@@ -7,37 +7,38 @@ import java.awt.geom.AffineTransform;
 import java.net.URL;
 
 public class Pipes {
-	public int pipex = 0,pipey = 0;
+	public int x = 0;
+	public int y = 0;
 	private int x2 = 0,y2 = 0;
 	private Image img; // image of the frog
-	private AffineTransform tx = AffineTransform.getTranslateInstance(pipex, pipey);
+	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 
 	public Pipes() {
 	img = getImage("/imgs/pipe.png"); //load the image based on the filename "ground.png"
-		init(pipex, pipey);    
+		init(x, y);    
 		
-		pipex = 800;
-		pipey = 300;
+		x = 800;
+		y = 300;
 		
-		init(pipex, pipey);
+		init(x, y);
 		
 	}
 	
 	
-	public int getPipex() {
-		return pipex;
+	public int getPX() {
+		return x;
 	}
 
-	public void setPipex(int pipex) {
-		this.pipex = pipex;
+	public void setPX(int x) {
+		this.x = x;
 	}
 
 	public int getPipey() {
-		return pipey;
+		return y;
 	}
 
-	public void setPipey(int pipey) {
-		this.pipey = pipey;
+	public void setPipey(int y) {
+		this.y = y;
 	}
 
 	
@@ -46,8 +47,8 @@ public class Pipes {
 		//using a Graphics2D to draw images
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);
-		pipex = pipex-5;
-		tx.setToTranslation(pipex, pipey);
+		x = x-20;
+		tx.setToTranslation(x, y);
 		update();
 	}
 	
@@ -56,11 +57,11 @@ public class Pipes {
 	
 	
 	private void update() {
-		if(pipex <= -80) {
-			pipex = 810;
-			pipey = (int) (Math.random()*(601)+200);
+		if(x <= -80) {
+			x = 810;
+			y = (int) (Math.random()*(601)+200);
 		}
-		tx.setToTranslation(pipex, pipey);
+		tx.setToTranslation(x, y);
 		tx.scale(0.2, 0.5);
 	}
 

@@ -21,7 +21,7 @@ public class Runner extends JPanel implements KeyListener, ActionListener, Mouse
 	public boolean Started;
 	
 	Pipes2[] toppipes = new Pipes2[4];
-	Pipes[] botpipes = new Pipes[4];
+	Pipes botpipes = new Pipes();
 	Bird Bird = new Bird();
 	Ground foreground = new Ground();
 	Gameover deathscreen = new Gameover();
@@ -32,27 +32,27 @@ public class Runner extends JPanel implements KeyListener, ActionListener, Mouse
 	public void paint(Graphics g) {
 		super.paintComponent(g);
 		
+		
+		
+		
 		if(Started == false) {
 			start.paint(g);
 		}
 		
 		
 		
+		if( Bird.collisioncheck(botpipes) == true) {
+			Bird.Death = true;
+		}
 		
-		
-		
+	
 		
 		if(Started == true) {
 			if(Bird.isDeath() == false) {
-				
+		
 			foreground.paint(g);
 			Bird.paint(g);
-			
-			for (int i = 0; i < botpipes.length; i++) {
-				botpipes[i].paint(g); 
-				toppipes[i].paint(g);
-		
-			}
+			botpipes.paint(g);
 			
 			//if(pipex >= 0) {
 			//	numberOfPipes++;
@@ -60,6 +60,7 @@ public class Runner extends JPanel implements KeyListener, ActionListener, Mouse
 			//}
 		}
 	
+			
 		if(Bird.isDeath() == true) {
 			deathscreen.paint(g);
 		
@@ -72,6 +73,21 @@ public class Runner extends JPanel implements KeyListener, ActionListener, Mouse
 	
 	
 	
+	
+
+	
+
+
+	
+
+
+
+
+
+
+
+
+
 	public Runner() {
 		JFrame f = new JFrame("Frame");
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -84,11 +100,7 @@ public class Runner extends JPanel implements KeyListener, ActionListener, Mouse
 		t.start();
 		f.setVisible(true);
 		
-		// generate pipes
-		for (int i = 0; i < botpipes.length; i++) {
-			botpipes[i] = new Pipes();
-			toppipes[i] = new Pipes2();
-		}
+	
 		
 	}
 

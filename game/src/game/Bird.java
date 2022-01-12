@@ -23,10 +23,11 @@ public class Bird implements MouseListener {
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 	private static int scoreCount = 0;
 	public boolean Death;
+	private boolean bruh;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		boolean bruh = true;
 	}
 
 	
@@ -51,7 +52,8 @@ public class Bird implements MouseListener {
 	
 	
 	public void paint(Graphics g) {
-		Graphics2D g2 = (Graphics2D) g;		
+		Graphics2D g2 = (Graphics2D) g;	
+
 		g2.drawImage(img, tx, null);
 		y+=vy;
 		vy++;
@@ -60,7 +62,9 @@ public class Bird implements MouseListener {
 			Death = true;
 		}
 		tx.setToTranslation(x, y);
-
+		
+		
+			
 	}
 	
 	
@@ -73,7 +77,6 @@ public class Bird implements MouseListener {
 	public void setDeath(boolean death) {
 		Death = death;
 	}
-
 
 
 	private Image getImage(String path) {
@@ -92,6 +95,41 @@ public class Bird implements MouseListener {
 		tx.setToTranslation(x, y);
 		tx.scale(1,1);
 	}
+
+	public boolean collisioncheck(Pipes pipe) {
+		int xx = pipe.getPX(); 
+		int yy = pipe.getPipey(); 
+		
+		if(getX() == xx && getY() == yy) {
+			Death = true;
+			return true;
+		}else {
+		return false;
+		}
+	}
+	
+	public int getX() {
+		return x;
+	}
+
+
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+
+
+	public int getY() {
+		return y;
+	}
+
+
+
+	public void setY(int y) {
+		this.y = y;
+	}
+
 
 
 	@Override
@@ -123,5 +161,8 @@ public class Bird implements MouseListener {
 		// TODO Auto-generated method stub
 		
 	}
+
+
+
 
 }

@@ -46,7 +46,7 @@ public class Pipes2 {
 		//using a Graphics2D to draw images
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);
-		pipex = pipex-5;
+		pipex = pipex-20;
 		tx.setToTranslation(pipex, pipey);
 		update();
 	}
