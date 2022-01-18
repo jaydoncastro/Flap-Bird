@@ -100,7 +100,7 @@ public class Bird implements MouseListener {
 		int xx = pipe.getPX(); 
 		int yy = pipe.getPipey(); 
 		
-		if(getX() == xx && getY() == yy) {
+		if(x == xx && y == yy) {
 			Death = true;
 			return true;
 		}else {

@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 public class Runner extends JPanel implements KeyListener, ActionListener, MouseListener{
-	
+	//I'm just the shell of a man, and a shell of who I was or could've been
 	int numberOfPipes = 2;
 	public boolean Started;
 	
