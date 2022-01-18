@@ -41,15 +41,11 @@ public class Runner extends JPanel implements KeyListener, ActionListener, Mouse
 		
 		
 		
-		if( Bird.collisioncheck(botpipes) == true) {
-			Bird.Death = true;
-		}
 		
 	
 		
 		if(Started == true) {
 			if(Bird.isDeath() == false) {
-		
 			foreground.paint(g);
 			Bird.paint(g);
 			botpipes.paint(g);

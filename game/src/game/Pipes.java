@@ -33,7 +33,7 @@ public class Pipes {
 		this.x = x;
 	}
 
-	public int getPipey() {
+	public int getPY() {
 		return y;
 	}
 

@@ -10,6 +10,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
 import java.net.URL;
+import java.nio.channels.Pipe;
 
 public class Bird implements MouseListener {
 
@@ -61,6 +62,7 @@ public class Bird implements MouseListener {
 		if(y >= 700 || y <= -100) {
 			Death = true;
 		}
+		
 		tx.setToTranslation(x, y);
 		
 		
@@ -96,17 +98,8 @@ public class Bird implements MouseListener {
 		tx.scale(1,1);
 	}
 
-	public boolean collisioncheck(Pipes pipe) {
-		int xx = pipe.getPX(); 
-		int yy = pipe.getPipey(); 
-		
-		if(x == xx && y == yy) {
-			Death = true;
-			return true;
-		}else {
-		return false;
-		}
-	}
+	
+	
 	
 	public int getX() {
 		return x;
@@ -161,6 +154,19 @@ public class Bird implements MouseListener {
 		// TODO Auto-generated method stub
 		
 	}
+
+
+
+	//public boolean collisioncheck(Pipes pipe) {
+	//	int xx = Pipes.getPX(); 
+	//	int yy = Pipes.getPY(); 
+	//	
+	//	if(x == xx && y == yy) {
+	//		return true;
+	//	}else {
+	//		return false;
+	//	}
+	//}
 
 
 
