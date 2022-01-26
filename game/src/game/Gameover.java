@@ -12,7 +12,7 @@ public class Gameover {
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 
 	public Gameover() {
-	img = getImage("/imgs/gameover.jpg"); //load the image based on the filename "ground.png"
+	img = getImage("/imgs/gameover.png"); //load the image based on the filename "ground.png"
 		init(x, y);                   //initialize the picture location
 	}
 	

@@ -17,7 +17,7 @@ import javax.swing.Timer;
 
 public class Runner extends JPanel implements KeyListener, ActionListener, MouseListener{
 	//I'm just the shell of a man, and a shell of who I was or could've been
-	int numberOfPipes = 2;
+	int numberOfPipes = 2; 
 	public boolean Started;
 	
 	Pipes2[] toppipes = new Pipes2[4];
@@ -26,17 +26,44 @@ public class Runner extends JPanel implements KeyListener, ActionListener, Mouse
 	Ground foreground = new Ground();
 	Gameover deathscreen = new Gameover();
 	StartScreen start = new StartScreen();
-	
-	
-	
+	public int getScore() {
+		return score;
+	}
+
+
+
+
+
+
+
+	//hi
+
+
+
+
+
+
+
+
+
+
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	int score = 0;
+	Font Dialog = new Font("Serif", Font.BOLD, 28);
 	public void paint(Graphics g) {
 		super.paintComponent(g);
-		
-		
+		g.setFont(Dialog);
+		g.drawString("Score " + score, 500, 500);
+		System.out.println(Bird.getY());
 		
 		
 		if(Started == false) {
 			start.paint(g);
+			g.drawString("Score " + score, 500, 500);
 		}
 		
 		
@@ -49,7 +76,7 @@ public class Runner extends JPanel implements KeyListener, ActionListener, Mouse
 			foreground.paint(g);
 			Bird.paint(g);
 			botpipes.paint(g);
-			
+			g.drawString("Score " + score, 500, 500);
 			//if(pipex >= 0) {
 			//	numberOfPipes++;
 			//	System.out.println("pipe gone");
@@ -59,7 +86,7 @@ public class Runner extends JPanel implements KeyListener, ActionListener, Mouse
 			
 		if(Bird.isDeath() == true) {
 			deathscreen.paint(g);
-		
+			g.drawString("Score" + score, 50, 50);
 		}
 		
 		
@@ -107,6 +134,7 @@ public class Runner extends JPanel implements KeyListener, ActionListener, Mouse
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
+
 		// TODO Auto-generated method stub
 		repaint();
 	}
@@ -130,7 +158,7 @@ public class Runner extends JPanel implements KeyListener, ActionListener, Mouse
 	@Override
 	public void keyTyped(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		
+		arg0.getKeyCode();
 	}
 
 
@@ -170,11 +198,13 @@ public class Runner extends JPanel implements KeyListener, ActionListener, Mouse
 		if(Started == false) {
 			Started = true;
 		}
-		
+		if(Bird.isDeath() == false) {
 		if(Started == true) {
 		Bird.Jump();
+		score += 1;
 		}
 	}
+}
 
 
 

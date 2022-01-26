@@ -39,13 +39,25 @@ public class Bird implements MouseListener {
 		y = 275;
 		vy = 3;
 		init(x, y);
+		System.out.println(x);
+		System.out.println(y);
 	}
 	
 	
 	public void Jump() {
-		y -= 50;
+	if(y>=30 && y<=50) {
+		y += 30;
 		vy = -5;
+	}else if(y>=230 && y<= 270) {
+		y += (int) (Math.random()*500);
+		vy-=5;
 		
+	}else if(y>=50 && y<=80 ) {
+		y -= 100;
+		vy = -5;
+	}
+		y-=30;
+		vy=-5;
 	}
 	
 	
@@ -95,7 +107,7 @@ public class Bird implements MouseListener {
 	
 	private void init(int x, int y) {
 		tx.setToTranslation(x, y);
-		tx.scale(1,1);
+		tx.scale(0.3,0.3);
 	}
 
 	
