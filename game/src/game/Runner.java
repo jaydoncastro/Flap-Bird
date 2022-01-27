@@ -17,10 +17,10 @@ import javax.swing.Timer;
 
 public class Runner extends JPanel implements KeyListener, ActionListener, MouseListener{
 	//I'm just the shell of a man, and a shell of who I was or could've been
-	int numberOfPipes = 2; 
+	int numberOfPipes = 29; 
 	public boolean Started;
 	
-	Pipes2[] toppipes = new Pipes2[4];
+	Pipes2[] toppipes = new Pipes2[29];
 	Pipes botpipes = new Pipes();
 	Bird Bird = new Bird();
 	Ground foreground = new Ground();
@@ -75,6 +75,8 @@ public class Runner extends JPanel implements KeyListener, ActionListener, Mouse
 			if(Bird.isDeath() == false) {
 			foreground.paint(g);
 			Bird.paint(g);
+			botpipes.paint(g);
+			botpipes.paint(g);
 			botpipes.paint(g);
 			g.drawString("Score " + score, 500, 500);
 			//if(pipex >= 0) {
