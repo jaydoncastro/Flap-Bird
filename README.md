@@ -1,7 +1,11 @@
 # Flap-Bird
 just making flappy bird for school
 
+you get 1 point which is added to your score everytime you jump
 
+random jump effects occur, meaning everytime you jump you go a random distance and direction
+
+try to stay alive!
 
 Gameplay Screenshots
 
