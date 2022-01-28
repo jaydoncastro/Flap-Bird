@@ -3,6 +3,8 @@ you get 1 point which is added to your score everytime you jump
 
 random jump effects occur, meaning everytime you jump you go a random distance and direction
 
+the debris i made will also kill you (sometimes, because it's random)
+
 try to stay alive!
 
 # Gameplay Screenshots
