@@ -1,7 +1,7 @@
 # Flap-Bird
 you get 1 point which is added to your score everytime you jump
 
-random jump effects occur, meaning everytime you jump you go a random distance and direction
+random jump effects occur, meaning everytime sometimes when you jump you go a random distance and direction
 
 try to stay alive!
 
