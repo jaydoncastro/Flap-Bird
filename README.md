@@ -17,6 +17,6 @@ try to stay alive!
 
 ![](https://github.com/jaydoncastro/Flap-Bird/blob/2f8dee80366e3f2186dee9ebe457c579feb9bf87/flapbirddeathscreen.PNG)
 
-# The Creator of the game's high score (beta release)
+# The Creator of the game's high score
 
 ![](https://github.com/jaydoncastro/Flap-Bird/blob/00aa2a084be2d3e37de5a1db4edd872fe68f93c5/jaydonhighscore.PNG)
