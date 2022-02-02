@@ -12,7 +12,7 @@ try to stay alive!
 ![](https://github.com/jaydoncastro/Flap-Bird/blob/master/gameplay2.PNG)
 
 # Picture of death screen
-
+You die when you go off screen
 ![](https://github.com/jaydoncastro/Flap-Bird/blob/2f8dee80366e3f2186dee9ebe457c579feb9bf87/flapbirddeathscreen.PNG)
 
 # The Creator of the game's high score
